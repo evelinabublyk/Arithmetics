@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         while(true) {
-        System.out.println("Enter the number from 1 to 5");
+        System.out.println("Enter a number from 1 to 5");
         int exercise = sc.nextInt();
 
         if (exercise == 0){
@@ -14,39 +14,63 @@ public class Main {
         }
 
             switch (exercise) {
-            case 1:
-                System.out.println("Enter the number of seconds");
-                int seconds = sc.nextInt();
-                int minutesAndSeconds;
-                System.out.print((minutesAndSeconds = seconds / 60) + " minutes, ");
-                System.out.println((minutesAndSeconds = seconds % 60) + " seconds");
-                break;
-            case 2 :
-                System.out.println("Enter the number of days");
-                int days = sc.nextInt();
-                int monthsWeeksDays;
-                System.out.print((monthsWeeksDays = days / 30) + " months, ");
-                System.out.print((monthsWeeksDays = days / 7) + " weeks, ");
-                System.out.println((monthsWeeksDays = days % 7) + " days");
-                break;
-            case 3:
+                case 1:
+                    System.out.println("Enter the number of seconds");
+                    int seconds = sc.nextInt();
+                    int minutesAndSeconds;
+                    System.out.print((minutesAndSeconds = seconds / 60) + " minutes, ");
+                    System.out.println((minutesAndSeconds = seconds % 60) + " seconds");
+                    break;
+                case 2:
+                    System.out.println("Enter the number of days");
+                    int days = sc.nextInt();
+                    int monthsWeeksDays;
+                    System.out.print((monthsWeeksDays = days / 30) + " months, ");
+                    System.out.print((monthsWeeksDays = days / 7) + " weeks, ");
+                    System.out.println((monthsWeeksDays = days % 7) + " days");
+                    break;
+                case 3: {
+                    System.out.println("Enter two coordinates of the point");
+                    int pointX = sc.nextInt();
+                    int pointY = sc.nextInt();
+
+                    if (pointX > 0 && pointY > 0) {
+                        System.out.println("The point is in the first quadrant");
+                    } else if (pointX < 0 && pointY > 0) {
+                        System.out.println("The point is in the second quadrant");
+                    } else if (pointX < 0 && pointY < 0) {
+                        System.out.println("The point is in the third quadrant");
+                    } else if (pointX > 0 && pointY < 0) {
+                        System.out.println("The point is in the fourth quadrant");
+                    } else if (pointX == 0 && pointY == 0) {
+                        System.out.println("The point is at the origin");
+                    } else if (pointX == 0) {
+                        System.out.println("The point lies on the Y-axis");
+                    } else { // pointY == 0
+                        System.out.println("The point lies on the X-axis");
+                    }
+                    break;
+                }
+            case 4:
                 System.out.println("Enter the deposit amount");
-                int deposit = sc.nextInt();
+                double deposit = sc.nextDouble();
+
                 System.out.println("How many years was the money deposited for?");
                 int years = sc.nextInt();
-                if (years % 5 == 0){
 
-                }
-                break;
-            case 4:
-                System.out.println("kfghrkkgj");
-                break;
+                int fullFiveYearsPeriods = years / 5;
+                int percentTotal = fullFiveYearsPeriods * 10;
+                double profit = deposit / percentTotal * 100.0;
+
+                System.out.println("Accrued interest: " + (fullFiveYearsPeriods + "%"));
+                System.out.printf("Profit: %.2f euros%n", profit);
             case 5:
                 System.out.println("jgfseiyufsr");
                 break;
             default:
                 System.out.println("Enter the number from 1 to 5");
             }
-        }
+                break;
+            }
     }
 }
