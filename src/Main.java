@@ -35,10 +35,14 @@ public class Main {
                         System.out.println("ERROR");
                         break;
                     }
-                    int monthsWeeksDays;
-                    System.out.print((monthsWeeksDays = days / 30) + " months, ");
-                    System.out.print((monthsWeeksDays = days / 7) + " weeks, ");
-                    System.out.println((monthsWeeksDays = days % 7) + " days");
+                    int months = days / 30;
+                    int remainingDays = days % 30;
+                    int weeks = remainingDays / 7;
+                    int finalDays = remainingDays % 7;
+
+                    System.out.print(months + " months, ");
+                    System.out.print(weeks + " weeks, ");
+                    System.out.println(finalDays + " days");
                     break;
                 case 3:
                     System.out.println("Enter two coordinates of the point");
