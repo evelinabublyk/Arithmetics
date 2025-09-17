@@ -23,9 +23,8 @@ public class Main {
                             break;
                         }
 
-                        int minutesAndSeconds;
-                        System.out.print((minutesAndSeconds = seconds / 60) + " minutes, ");
-                        System.out.println((minutesAndSeconds = seconds % 60) + " seconds");
+                        System.out.print((seconds / 60) + " minutes, ");
+                        System.out.println((seconds % 60) + " seconds");
                         break;
                     case 2:
                         System.out.println("Enter the number of days");
